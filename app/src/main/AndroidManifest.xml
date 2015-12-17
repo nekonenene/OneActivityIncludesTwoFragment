@@ -5,7 +5,7 @@
     <application
             android:name=".BaseApplication"
             android:allowBackup="true"
-            android:icon="@android:drawable/ic_lock_silent_mode_off"
+            android:icon="@drawable/ic_alarm_on_indigo_a400_48dp"
             android:label="@string/app_name"
             android:supportsRtl="true"
             android:theme="@style/AppTheme.NoActionBar">
