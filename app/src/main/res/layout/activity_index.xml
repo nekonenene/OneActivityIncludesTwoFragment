@@ -20,12 +20,20 @@
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
             />
 
-    <fragment
-            android:id="@+id/fragment1"
-            android:name="hatonekoe.x0.com.oneactivityincludestwofragment.fragment.ButtonsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_buttons"
-            />
+        <fragment
+                android:id="@+id/fragment1"
+                android:name="hatonekoe.x0.com.oneactivityincludestwofragment.fragment.ButtonsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_buttons"
+                />
+
+        <fragment
+                android:id="@+id/fragment2"
+                android:name="hatonekoe.x0.com.oneactivityincludestwofragment.fragment.ButtonsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_buttons"
+                />
 
 </LinearLayout>

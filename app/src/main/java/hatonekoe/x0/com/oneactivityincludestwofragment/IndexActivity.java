@@ -58,7 +58,7 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
         }
         else if(id == R.id.action_info)
         {
-            displayNotification( R.integer.info_icon_notification , "INFO!!");
+            displayNotification( R.integer.info_icon_notification , "右上のアクションバーから押されました");
             return true;
         }
 
@@ -71,6 +71,7 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
         LogDebug.D(TAG, "Get Fragment Interaction : " + uri);
     }
 
+    /** 通知の表示をおこなう */
     public static void displayNotification(Integer id, String message)
     {
         Notification notification = new Notification.Builder(mContext)
@@ -78,7 +79,7 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
                 .setContentText( message )
                 .setSmallIcon(R.drawable.ic_alarm_on_indigo_a400_48dp)
                 .setPriority(Notification.PRIORITY_LOW)
-                .setTicker("ticker")
+                .setTicker("これは ticker です")
                 .setLights(Color.BLUE, 500, 500)
                 .build();
 

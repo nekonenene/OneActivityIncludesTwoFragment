@@ -13,15 +13,6 @@ import hatonekoe.x0.com.oneactivityincludestwofragment.IndexActivity;
 import hatonekoe.x0.com.oneactivityincludestwofragment.R;
 import hatonekoe.x0.com.oneactivityincludestwofragment.utils.LogDebug;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ButtonsFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ButtonsFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
 public class ButtonsFragment extends Fragment
 {
     private static final String TAG = "ButtonsFragment" ;
@@ -35,7 +26,7 @@ public class ButtonsFragment extends Fragment
     }
 
     // TODO: Rename and change types and number of parameters
-    public static ButtonsFragment newInstance()
+    public static ButtonsFragment newInstance(int i)
     {
         ButtonsFragment fragment = new ButtonsFragment();
         Bundle args = new Bundle();
@@ -67,7 +58,7 @@ public class ButtonsFragment extends Fragment
             public void onClick(View v)
             {
                 LogDebug.D(TAG, "STARTボタンが押されました" + this.getClass() + Uri.parse(this.toString()));
-                IndexActivity.displayNotification( R.integer.hello_button_notification, "zzzzz");
+                IndexActivity.displayNotification( R.integer.hello_button_notification, "はろーボタンが押されました");
             }
         });
     }
