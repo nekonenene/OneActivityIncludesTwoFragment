@@ -7,11 +7,12 @@
             android:orderInCategory="100"
             android:title="@string/action_settings"
             android:icon="@android:drawable/ic_menu_manage"
-            app:showAsAction="ifRoom|withText" />
+             />
     <item
-            android:id="@+id/say_hello"
+            android:id="@+id/action_info"
             android:title="@string/hello"
             android:icon="@android:drawable/ic_menu_info_details"
-            app:showAsAction="ifRoom|withText" />
+            app:showAsAction="ifRoom|withText"
+            />
 
 </menu>

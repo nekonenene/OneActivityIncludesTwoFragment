@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import hatonekoe.x0.com.oneactivityincludestwofragment.IndexActivity;
 import hatonekoe.x0.com.oneactivityincludestwofragment.R;
 import hatonekoe.x0.com.oneactivityincludestwofragment.utils.LogDebug;
 
@@ -66,6 +67,7 @@ public class ButtonsFragment extends Fragment
             public void onClick(View v)
             {
                 LogDebug.D(TAG, "STARTボタンが押されました" + this.getClass() + Uri.parse(this.toString()));
+                IndexActivity.displayNotification( R.integer.hello_button_notification, "zzzzz");
             }
         });
     }
