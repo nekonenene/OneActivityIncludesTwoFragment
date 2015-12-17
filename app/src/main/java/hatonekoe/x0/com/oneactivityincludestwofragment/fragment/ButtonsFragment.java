@@ -59,9 +59,15 @@ public class ButtonsFragment extends Fragment
     {
         super.onStart();
 
+        // リスナー登録をおこなう
         setupListener();
     }
 
+    /** リスナー登録をおこなう
+     *  Fragment の ID を取得し……という形なので、
+     *  Fragment.java でなく Activity.java にここらへんの処理をやらせるのが正しいと思う
+     *  TODO: 暇があったらここらの機能を IndexActivity.java に持っていく
+     */
     private void setupListener()
     {
         mFragment1View = getFragmentManager().findFragmentById( R.id.fragment1 ).getView();
