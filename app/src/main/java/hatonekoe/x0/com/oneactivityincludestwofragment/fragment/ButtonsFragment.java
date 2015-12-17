@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +17,14 @@ import hatonekoe.x0.com.oneactivityincludestwofragment.utils.LogDebug;
 public class ButtonsFragment extends Fragment
 {
     private static final String TAG = "ButtonsFragment" ;
-    private Button mButton;
-
     private OnFragmentInteractionListener mListener;
+
+    private Context mContext;
+    private View mFragment1View;
+    private View mFragment2View;
+
+    private Button mButton1;
+    private Button mButton2;
 
     public ButtonsFragment()
     {
@@ -26,7 +32,7 @@ public class ButtonsFragment extends Fragment
     }
 
     // TODO: Rename and change types and number of parameters
-    public static ButtonsFragment newInstance(int i)
+    public static ButtonsFragment newInstance()
     {
         ButtonsFragment fragment = new ButtonsFragment();
         Bundle args = new Bundle();
@@ -38,6 +44,7 @@ public class ButtonsFragment extends Fragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        mContext = getContext();
     }
 
     @Override
@@ -51,14 +58,45 @@ public class ButtonsFragment extends Fragment
     public void onStart()
     {
         super.onStart();
-        mButton = (Button) getActivity().findViewById(R.id.button1) ;
-        mButton.setOnClickListener(new View.OnClickListener()
+
+        setupListener();
+    }
+
+    private void setupListener()
+    {
+        mFragment1View = getFragmentManager().findFragmentById( R.id.fragment1 ).getView();
+        mFragment2View = getFragmentManager().findFragmentById( R.id.fragment2 ).getView();
+
+        try
+        {
+            mButton1 = (Button) mFragment1View.findViewById(R.id.button1);
+            mButton2 = (Button) mFragment2View.findViewById(R.id.button1);
+        }
+        catch(NullPointerException e)
+        {
+            e.printStackTrace();
+            return;
+        }
+
+        mButton1.setBackgroundColor(ContextCompat.getColor( mContext, R.color.amber_200 ));
+        mButton1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                LogDebug.D(TAG, "STARTボタンが押されました" + this.getClass() + Uri.parse(this.toString()));
-                IndexActivity.displayNotification( R.integer.hello_button_notification, "はろーボタンが押されました");
+                LogDebug.D(TAG, "はろー！！！！！！！！" + Uri.parse(this.toString()));
+                IndexActivity.displayNotification(R.integer.hello_button_notification, "上のはろーボタンが押されました");
+            }
+        });
+
+        mButton2.setBackgroundColor(ContextCompat.getColor( mContext, R.color.teal_200 ));
+        mButton2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                LogDebug.D(TAG, "hello... : " + Uri.parse(this.toString()));
+                IndexActivity.displayNotification(R.integer.hello_button_notification, "下のHELLOボタンが押されました");
             }
         });
     }

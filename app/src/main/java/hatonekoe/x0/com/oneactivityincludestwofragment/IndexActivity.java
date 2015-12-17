@@ -79,7 +79,7 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
                 .setContentText( message )
                 .setSmallIcon(R.drawable.ic_alarm_on_indigo_a400_48dp)
                 .setPriority(Notification.PRIORITY_LOW)
-                .setTicker("これは ticker です")
+                .setTicker( message )
                 .setLights(Color.BLUE, 500, 500)
                 .build();
 
