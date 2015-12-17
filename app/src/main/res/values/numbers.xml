@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Notification ID -->
+    <!-- Notification ID
+     : 今回のプログラムでは、ここで定める数値でなく、 ID の格納場所を数値として使っている -->
     <integer name="hello_button_notification">0</integer>
     <integer name="info_icon_notification">1</integer>
+
+    <!-- Button ID : 1000 ~ 1999 -->
+    <integer name="button_top">   1001</integer>
+    <integer name="button_bottom">1002</integer>
 
 </resources>

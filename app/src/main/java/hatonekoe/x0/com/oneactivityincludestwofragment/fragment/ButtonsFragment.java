@@ -86,6 +86,7 @@ public class ButtonsFragment extends Fragment
             {
                 LogDebug.D(TAG, "はろー！！！！！！！！" + Uri.parse(this.toString()));
                 IndexActivity.displayNotification(R.integer.hello_button_notification, "上のはろーボタンが押されました");
+                whenButtonPressed( getResources().getInteger( R.integer.button_top ) );
             }
         });
 
@@ -97,6 +98,7 @@ public class ButtonsFragment extends Fragment
             {
                 LogDebug.D(TAG, "hello... : " + Uri.parse(this.toString()));
                 IndexActivity.displayNotification(R.integer.hello_button_notification, "下のHELLOボタンが押されました");
+                whenButtonPressed( getResources().getInteger( R.integer.button_bottom ) );
             }
         });
     }
@@ -124,6 +126,15 @@ public class ButtonsFragment extends Fragment
     public interface OnFragmentInteractionListener
     {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(int id);
     }
+
+    public void whenButtonPressed(int id)
+    {
+        if(mListener != null)
+        {
+            mListener.onFragmentInteraction(id);
+        }
+    }
+
 }

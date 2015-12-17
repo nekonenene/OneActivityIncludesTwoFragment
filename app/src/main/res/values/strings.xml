@@ -9,5 +9,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="introduce_a_fragment">実は！\n私達！\nおなじ Fragment なんです！</string>
+    <string name="info">INFO</string>
+    <string name="delete_all_notification">通知の全消去</string>
 
 </resources>

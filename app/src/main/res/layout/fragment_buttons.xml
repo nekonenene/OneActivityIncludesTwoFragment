@@ -10,11 +10,22 @@
               android:padding="@dimen/fragment_default_margin"
         >
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/introduce_a_fragment"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            />
+
     <Button
             android:id="@+id/button1"
             android:layout_width="@dimen/button_default_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
             android:text="@string/hello"
             />
 </LinearLayout>

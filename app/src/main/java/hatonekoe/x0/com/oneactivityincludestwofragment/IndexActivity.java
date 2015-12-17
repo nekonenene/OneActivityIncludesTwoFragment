@@ -4,7 +4,6 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -53,7 +52,11 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
         //noinspection SimplifiableIfStatement
         if(id == R.id.action_settings)
         {
-            Toast.makeText(this, "\"" + getTaskId() + "\" が押されました", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "TaskId \"" + getTaskId() + "\" が押されました", Toast.LENGTH_SHORT).show();
+
+            NotificationManager manager = (NotificationManager)mContext.getSystemService(NOTIFICATION_SERVICE);
+            manager.cancel( R.integer.info_icon_notification );
+            manager.cancel( R.integer.hello_button_notification );
             return true;
         }
         else if(id == R.id.action_info)
@@ -66,9 +69,13 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri)
+    public void onFragmentInteraction(int id)
     {
-        LogDebug.D(TAG, "Get Fragment Interaction : " + uri);
+        if( 1000 <= id && id < 2000)
+        {
+            Toast.makeText(IndexActivity.this, String.format("ボタン %d が押されました", id ), Toast.LENGTH_SHORT).show();
+        }
+        LogDebug.D(TAG, "Get Fragment Interaction : " + id);
     }
 
     /** 通知の表示をおこなう */
@@ -86,6 +93,6 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
         NotificationManager manager = (NotificationManager)mContext.getSystemService(NOTIFICATION_SERVICE);
         manager.notify(id, notification );
 
-        LogDebug.D(TAG, "いちおうここまでは来た id : " + id );
+        LogDebug.D(TAG, "Notification ID : " + id );
     }
 }
