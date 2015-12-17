@@ -4,17 +4,17 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:layout_margin="@dimen/fragment_default_margin"
               android:orientation="vertical"
               tools:context=".IndexActivity"
               tools:showIn="@layout/activity_index"
-
+              android:padding="@dimen/fragment_default_margin"
         >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
-
+    <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/hello"
+            />
 </LinearLayout>

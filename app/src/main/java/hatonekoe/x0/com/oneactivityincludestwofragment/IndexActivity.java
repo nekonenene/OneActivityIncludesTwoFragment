@@ -60,6 +60,6 @@ public class IndexActivity extends AppCompatActivity implements ButtonsFragment.
     @Override
     public void onFragmentInteraction(Uri uri)
     {
-
+        LogDebug.D(TAG, "Get Fragment Interaction : " + uri);
     }
 }

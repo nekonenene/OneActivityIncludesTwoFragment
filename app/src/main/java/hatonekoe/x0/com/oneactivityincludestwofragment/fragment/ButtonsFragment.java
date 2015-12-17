@@ -7,9 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import hatonekoe.x0.com.oneactivityincludestwofragment.R;
-
+import hatonekoe.x0.com.oneactivityincludestwofragment.utils.LogDebug;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +24,7 @@ import hatonekoe.x0.com.oneactivityincludestwofragment.R;
 public class ButtonsFragment extends Fragment
 {
     private static final String TAG = "ButtonsFragment" ;
+    private Button mButton;
 
     private OnFragmentInteractionListener mListener;
 
@@ -53,13 +55,19 @@ public class ButtonsFragment extends Fragment
         return inflater.inflate(R.layout.fragment_buttons, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri)
+    @Override
+    public void onStart()
     {
-        if(mListener != null)
+        super.onStart();
+        mButton = (Button) getActivity().findViewById(R.id.button1) ;
+        mButton.setOnClickListener(new View.OnClickListener()
         {
-            mListener.onFragmentInteraction(uri);
-        }
+            @Override
+            public void onClick(View v)
+            {
+                LogDebug.D(TAG, "STARTボタンが押されました" + this.getClass() + Uri.parse(this.toString()));
+            }
+        });
     }
 
     @Override
