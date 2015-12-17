@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="username_char_limit">500</integer>
+    <integer name="password_char_limit">50</integer>
+
+    <!-- Loader ID -->
+    <integer name="login_loader_id">1</integer>
+</resources>

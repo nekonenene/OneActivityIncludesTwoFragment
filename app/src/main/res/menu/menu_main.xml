@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".IndexActivity">
+    <item
+            android:id="@+id/action_settings"
+            android:orderInCategory="100"
+            android:title="@string/action_settings"
+            android:icon="@android:drawable/ic_menu_manage"
+            app:showAsAction="ifRoom|withText" />
+    <item
+            android:id="@+id/say_hello"
+            android:title="@string/hello"
+            android:icon="@android:drawable/ic_menu_info_details"
+            app:showAsAction="ifRoom|withText" />
+
+</menu>

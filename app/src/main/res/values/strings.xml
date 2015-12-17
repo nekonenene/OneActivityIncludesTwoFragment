@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OneActivityIncludesTwoFragment</string>
+
+    <string name="app_name">Fragment Test</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello">はろー！</string>
+    <string name="hello2">はろはろー！</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
